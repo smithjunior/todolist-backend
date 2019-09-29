@@ -24,4 +24,6 @@ app.get('/', (request, response) => {
 
 app.get('/items', ItemController.index)
 
+app.post('/items', ItemController.store)
+
 server.listen(process.env.PORT || 3333)
