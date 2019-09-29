@@ -12,17 +12,19 @@ For the bootcamp express at Rentcars.com this backend project was made with node
 - express @^4.17.1
 - mongoose @^5.7.1
 
-### Developemnt dependencies
+### Development dependencies
 
 - nodemon @^1.19.3
 
 ## Resources
 
+For data submit you need to send the payload as json format on request body.
+
 ```
-GET     localhost:3000/items
-POST    localhost:3000/items
-PUT     localhost:3000/items/{id}
-DELETE  localhost:3000/items/{id}
+GET     localhost:3333/items
+POST    localhost:3333/items          Payload ~> { "description":"Todo List Test" }
+PUT     localhost:3333/items/{id}     Payload ~> { "description":"Todo List Test" , "checked": true }
+DELETE  localhost:3333/items/{id}
 ```
 
 ## Build
@@ -32,13 +34,13 @@ $ cp .env.example .env
 $ yarn install
 ```
 
-## Run Dev
+## Running Dev
 
 ```bash
 $ yarn dev
 ```
 
-## Run Prod
+## Running Prod
 
 ```bash
 $ yarn start
@@ -48,11 +50,10 @@ $ yarn start
 
 Now for the project you need a moogodb connection, you follow these steps below:
 
-1. Created an account on [MongoDB Cloud](https://cloud.mongodb.com/)
+1. Create an account on [MongoDB Cloud](https://cloud.mongodb.com/)
 2. Create a mongo db cluster
 3. Create a database with name **BOOTCAMP_EXPRESS**
-4. Create an user to database connection **BOOTCAMP_EXPRESS** with your password
-5. Get URL connection on cluster configuration like this: 
-> mongodb+srv://<username\>:<password\>@cluster0-45kku.mongodb.net/bootcamp_express?retryWrites=true&w=majority
-
-6. Replace **MONGO_URL_CONNECTION** key on .env inside project with
+4. Create a user to database connection **BOOTCAMP_EXPRESS** with your password
+5. Get URL connection on cluster configuration
+6. Replace **MONGO_URL_CONNECTION** key on .env
+   > **Ex**: mongodb+srv://<username\>:<password\>@cluster0-45kku.mongodb.net/bootcamp_express?retryWrites=true&w=majority
