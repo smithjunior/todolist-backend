@@ -15,5 +15,16 @@ module.exports = {
     })
 
     return response.json(item)
+  },
+  async destroy(request, response) {
+    const {
+      idItem
+    } = request.params
+
+    const removedItem = await Item.remove({
+      _id: idItem
+    })
+
+    return response.json(removedItem)
   }
 }

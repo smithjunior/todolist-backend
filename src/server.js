@@ -26,4 +26,6 @@ app.get('/items', ItemController.index)
 
 app.post('/items', ItemController.store)
 
+app.delete('/items/:idItem', ItemController.destroy)
+
 server.listen(process.env.PORT || 3333)
