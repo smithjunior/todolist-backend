@@ -1,10 +1,13 @@
 require('dotenv').config()
+
 const express = require('express')
 const cors = require('cors')
 const app = express()
 const server = require('http').Server(app)
 
 const mongoose = require('mongoose')
+
+const ItemController = require('./controllers/ItemController')
 
 mongoose.connect(process.env.MONGO_URL_CONNECTION, {
   useNewUrlParser: true
@@ -18,5 +21,7 @@ app.get('/', (request, response) => {
     message: 'Server running ... ;)'
   })
 })
+
+app.get('/items', ItemController.index)
 
 server.listen(process.env.PORT || 3333)
