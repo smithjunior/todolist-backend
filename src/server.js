@@ -28,4 +28,6 @@ app.post('/items', ItemController.store)
 
 app.delete('/items/:idItem', ItemController.destroy)
 
+app.put('/items/:idItem', ItemController.update)
+
 server.listen(process.env.PORT || 3333)
