@@ -4,6 +4,12 @@ const cors = require('cors')
 const app = express()
 const server = require('http').Server(app)
 
+const mongoose = require('mongoose')
+
+mongoose.connect(process.env.MONGO_URL_CONNECTION, {
+  useNewUrlParser: true
+})
+
 app.use(cors())
 app.use(express.json())
 
