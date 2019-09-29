@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
 const app = express()
@@ -8,8 +9,8 @@ app.use(express.json())
 
 app.get('/', (request, response) => {
   return response.json({
-    message: "Sucess"
+    message: 'Server running ... ;)'
   })
 })
 
-server.listen(3000)
+server.listen(process.env.PORT || 3333)

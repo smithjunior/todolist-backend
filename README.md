@@ -29,6 +29,7 @@ DELETE  localhost:3000/items/{id}
 ## Build
 
 ```bash
+$ cp .env.example .env
 $ yarn install
 ```
 
