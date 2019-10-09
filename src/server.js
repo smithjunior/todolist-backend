@@ -10,7 +10,8 @@ const mongoose = require('mongoose')
 const ItemController = require('./controllers/ItemController')
 
 mongoose.connect(process.env.MONGO_URL_CONNECTION, {
-  useNewUrlParser: true
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 })
 
 app.use(cors())
